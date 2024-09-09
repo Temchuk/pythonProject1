@@ -5,7 +5,7 @@
 
 from typing import List, Callable
 
-def task_manager():
+def task():
     tasks = []
 
     def add_task(task: str) -> None:
@@ -16,11 +16,11 @@ def task_manager():
 
     return add_task, get_tasks
 
-# Приклад використання:
-add_task, get_tasks = task_manager()
-add_task("Купити молоко")
+
+add_task, get_tasks = task()
+add_task("Зробити ДЗ")
 add_task("Вивчити Python")
-print(get_tasks())  # ['Купити молоко', 'Вивчити Python']
+print(get_tasks())
 
 
 
@@ -31,7 +31,7 @@ print(get_tasks())  # ['Купити молоко', 'Вивчити Python']
 # 2) протипізувати перше завдання
 from typing import List, Tuple, Callable
 
-def task_manager() -> Tuple[Callable[[str], None], Callable[[], List[str]]]:
+def task() -> Tuple[Callable[[str], None], Callable[[], List[str]]]:
     tasks: List[str] = []
 
     def add_task(task: str) -> None:
@@ -47,7 +47,8 @@ def task_manager() -> Tuple[Callable[[str], None], Callable[[], List[str]]]:
 
 
 
-# 3) створити функцію котра буде повертати сумму розрядів числа у вигляді строки (також використовуемо типізацію)
+# 3) створити функцію котра буде повертати сумму розрядів числа у вигляді
+# строки (також використовуемо типізацію)
 #
 # Приклад:
 #
@@ -64,10 +65,10 @@ def expanded_form(num: int) -> str:
     ]
     return ' + '.join(result)
 
-# Приклад використання:
-print(expanded_form(12))    # '10 + 2'
-print(expanded_form(42))    # '40 + 2'
-print(expanded_form(70304)) # '70000 + 300 + 4'
+
+print(expanded_form(12))
+print(expanded_form(42))
+print(expanded_form(70304))
 
 
 
@@ -78,7 +79,7 @@ print(expanded_form(70304)) # '70000 + 300 + 4'
 # 4) створити декоратор котрий буде підраховувати скільки разів була запущена
 # функція продекорована цим декоратором, та буде виводити це значення після виконання функцій
 
-def count_calls_decorator(func: Callable) -> Callable:
+def count_decorator(func: Callable) -> Callable:
     count = 0
 
     def wrapper(*args, **kwargs):
@@ -90,13 +91,13 @@ def count_calls_decorator(func: Callable) -> Callable:
 
     return wrapper
 
-@count_calls_decorator
+@count_decorator
 def pr() -> str:
     return 'Hello_boss_!!!'
 
-# Приклад використання:
-print(pr())  # 'Hello boss !!!'
-print(pr())  # 'Hello boss !!!'
+
+print(pr())  # 'Hello world !!!'
+print(pr())  # 'Hello world !!!'
 
 
 
