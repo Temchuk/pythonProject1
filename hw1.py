@@ -7,8 +7,8 @@
 # #################################################################################
 
 st = 'as 23 fdfdg544'
-digits = ','.join([char for char in st if char.isdigit()])
-print(digits)
+numbers1 = ','.join([num for num in st if num.isdigit()])
+print(numbers1)
 
 
 
@@ -23,8 +23,8 @@ print(digits)
 
 import re
 st = 'as 23 fdfdg544 34'
-numbers = ', '.join(re.findall(r'\d+', st))
-print(numbers)
+numbers2 = ', '.join(re.findall(r'\d+', st))
+print(numbers2)
 
 
 
@@ -37,9 +37,9 @@ print(numbers)
 # записати кожний символ як окремий елемент списку і зробити його заглавним:
 # ['H', 'E', 'L', 'L', 'O', ',', ' ', 'W', 'O', 'R', 'L', 'D']
 
-greeting = 'Hello, world'
-upper_list = [char.upper() for char in greeting]
-print(upper_list)
+list1 = 'Hello, world'
+upper_list1 = [char.upper() for char in list1]
+print(upper_list1)
 
 
 
@@ -59,24 +59,24 @@ print(squares)
 
 
 
+
 # function
 #
 # - створити функцію яка виводить ліст
 def print_list(lst):
     print(lst)
 
-# Приклад використання:
 print_list([1, 2, 3, 4])
 
 
 
 
 # - створити функцію яка приймає три числа та виводить та повертає найбільше.
-def max_of_three(a, b, c):
+def max_of_all(a, b, c):
     return max(a, b, c)
 
-# Приклад використання:
-print(max_of_three(5, 10, 3))
+
+print(max_of_all(2, 1, 3))
 
 
 
@@ -86,8 +86,7 @@ def min_max(*numbers):
     print(max(numbers))
     return min(numbers)
 
-# Приклад використання:
-min_value = min_max(5, 10, 3, 20, 15)
+min_value = min_max(2, 10, 8, 200, 1)
 print(min_value)
 
 
@@ -97,7 +96,6 @@ print(min_value)
 def max_in_list(lst):
     return max(lst)
 
-# Приклад використання:
 print(max_in_list([1, 5, 10, 2, 7]))
 
 
@@ -119,7 +117,6 @@ print(min_in_list([1, 5, 10, 2, 7]))
 def sum_of_list(lst):
     return sum(lst)
 
-# Приклад використання:
 print(sum_of_list([1, 2, 3, 4, 5]))
 
 
@@ -130,7 +127,6 @@ print(sum_of_list([1, 2, 3, 4, 5]))
 def average_of_list(lst):
     return sum(lst) / len(lst)
 
-# Приклад використання:
 print(average_of_list([1, 2, 3, 4, 5]))
 
 
@@ -144,15 +140,15 @@ print(average_of_list([1, 2, 3, 4, 5]))
 
 lst = [22, 3, 5, 2, 8, 2, -23, 8, 23, 5]
 
-# Знайти мінімальне число
+
 min_value = min(lst)
 print("Мінімальне число:", min_value)
 
-# Видалити дублікати
+
 lst_no_duplicates = list(set(lst))
 print("Список без дублікатів:", lst_no_duplicates)
 
-# Замінити кожне 4-те значення на 'X'
+
 for i in range(3, len(lst), 4):
     lst[i] = 'X'
 print("Модифікований список:", lst)
@@ -170,7 +166,6 @@ def print_square(size):
         else:
             print('*' + ' ' * (size - 2) + '*')
 
-# Приклад використання:
 print_square(5)
 
 
@@ -207,11 +202,10 @@ def menu():
             print("Мінімальне число:", min(numeric_lst))
 
         elif choice == '2':
-            lst = list(set(lst))  # Видаляємо дублікати
+            lst = list(set(lst))
             print("Список без дублікатів:", lst)
 
         elif choice == '3':
-            # Заміняємо кожен 4-ий елемент на 'X'
             for i in range(3, len(lst), 4):
                 lst[i] = 'X'
             print("Модифікований список:", lst)
@@ -241,5 +235,4 @@ def menu():
         else:
             print("Неправильний вибір, спробуйте ще раз.")
 
-# Запуск меню:
 menu()
